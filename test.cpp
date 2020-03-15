@@ -3,12 +3,12 @@
 #include <vector>
 #include <ctime>
 
-// include header of your allocator here
+// 头文件包含
 #include "MP_Allocator.h"
 
 template<class T>
-//using MyAllocator = std::allocator<T>; 
-using MyAllocator = MP_Allocator<T>; // replace the std::allocator with your allocator
+//using MyAllocator = std::allocator<T>;	//STL的空间适配器
+using MyAllocator = MP_Allocator<T>;
 using Point2D = std::pair<int, int>;
 
 const int TestSize = 10000;
@@ -22,7 +22,7 @@ int main()
 
 	// 测试开始时间
 	time_t create_vecints_start = clock();
-	// vector creation
+	// vector创建
 	using IntVec = std::vector<int, MyAllocator<int>>;
 	std::cout << std::endl << "creat vecints:" << std::endl;
 	std::vector<IntVec, MyAllocator<IntVec>> vecints(TestSize);

@@ -20,7 +20,7 @@ struct node
 	char* value;				//可用的空间
 };
 
-static node* Free_List[Max_Length] = { NULL };		//总链表
+static node* Free_List[Max_Length] = { nullptr };		//总链表
 static char* Start_Of_Pool;		//内存池的首地址
 static char* End_Of_Pool;		//内存池的末地址
 static size_t Pool_Size = 16;
